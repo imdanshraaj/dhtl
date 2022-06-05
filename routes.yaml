@@ -1,0 +1,33 @@
+auth_login:
+  path: /auth/login
+  defaults: { controller: 'app\Controllers\UserController::login'}
+  methods:  [POST]
+
+customers_index:
+  path: /customers
+  defaults: { controller: 'app\Controllers\CustomerController::index'}
+  methods:  [POST]
+
+customers_store:
+  path: /customers
+  defaults: { controller: 'app\Controllers\CustomerController::store'}
+  methods:  [POST]
+
+customers_edit:
+  path: /customers/{id}
+  defaults: { controller: 'app\Controllers\CustomerController::edit'}
+  methods:  [GET]
+  requirements:
+      id: '[0-9]+'
+
+customers_update:
+  path: /customers
+  defaults: { controller: 'app\Controllers\CustomerController::update'}
+  methods:  [PUT]
+
+customers_delete:
+  path: /customers/{id}
+  defaults: { controller: 'app\Controllers\CustomerController::delete'}
+  methods:  [DELETE]
+  requirements:
+      id: '[0-9]+'
